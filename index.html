@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatuTec - Cuidando da Natureza e do Meio Ambiente</title>
+    <!-- Carrega o Tailwind CSS via CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar cores e fontes customizadas --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'natutec-dark': '#0f172a', // slate-900 para o fundo
+                        'natutec-green': '#10b981', // emerald-500 para destaque
+                        'natutec-light': '#cbd5e1', // slate-300 para texto secundário
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Inter do Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos customizados para a estética visual */
+        body {
+            background-color: #0f172a; /* Fundo escuro */
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #10b981; /* Cor de destaque */
+            border-radius: 9999px;
+        }
+        .nav-link:hover {
+            color: #10b981;
+            transform: scale(1.05);
+        }
+        .scroll-mt-24 {
+            scroll-margin-top: 6rem; /* Ajuste para o header fixo */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Fixo e Navegação --><header class="fixed top-0 left-0 w-full bg-natutec-dark bg-opacity-95 backdrop-blur-sm z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Título revertido para somente texto e cor branca -->
+            <a href="#" class="text-2xl font-bold text-white">
+                <span>EcoHábito</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#ciencia" class="nav-link text-white transition duration-300">Ciência</a>
+                <a href="#dicas" class="nav-link text-white transition duration-300">Dicas</a>
+                <a href="#curiosidades" class="nav-link text-white transition duration-300">Curiosidades</a>
+                <a href="#calculadora" class="nav-link text-white transition duration-300">Quiz</a>
+                <a href="#sobre" class="nav-link text-white transition duration-300">Sobre</a>
+            </nav>
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Menu Mobile --><div id="mobile-menu" class="hidden md:hidden bg-natutec-dark shadow-xl">
+            <a href="#ciencia" class="block py-3 px-4 text-white hover:bg-slate-800 transition duration-300" onclick="closeMenu()">Ciência</a>
+            <a href="#dicas" class="block py-3 px-4 text-white hover:bg-slate-800 transition duration-300" onclick="closeMenu()">Dicas</a>
+            <a href="#curiosidades" class="block py-3 px-4 text-white hover:bg-slate-800 transition duration-300" onclick="closeMenu()">Curiosidades</a>
+            <a href="#calculadora" class="block py-3 px-4 text-white hover:bg-slate-800 transition duration-300" onclick="closeMenu()">Quiz</a>
+            <a href="#sobre" class="block py-3 px-4 text-white hover:bg-slate-800 transition duration-300" onclick="closeMenu()">Sobre</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Seção Hero --><!-- Imagem de background removida aqui --><section id="hero" class="py-24 md:py-32 bg-cover bg-center bg-natutec-dark"> 
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-natutec-dark bg-opacity-70 p-8 rounded-xl shadow-2xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-natutec-green mb-4">
+                    Cuidando da Natureza e do Meio Ambiente
+                </h1>
+                <!-- Frase do Hero --><p class="text-xl md:text-2xl text-natutec-light max-w-3xl mx-auto mb-8">
+                    Para criar a mudança que queremos ver,<br>é preciso começar de dentro
+                </p>
+                <a href="#ciencia" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-natutec-green hover:bg-emerald-600 transition duration-300 transform hover:scale-105">
+                    Explorar Conteúdo
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção Ciência Ambiental --><section id="ciencia" class="py-16 md:py-24 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold mb-12 section-title">Ciência Ambiental</h2>
+                <!-- Frase da Ciência Ambiental --><p class="text-lg text-natutec-light mb-12">
+                    Explore descobertas científicas e pesquisas que moldam nossa compreensão do meio ambiente.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Fotossíntese e CO₂ --><div class="bg-slate-800 p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-natutec-green/50 hover:ring-2 ring-natutec-green">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-3xl text-green-400">🌳</span>
+                            <h3 class="text-xl font-bold">Fotossíntese e CO₂</h3>
+                        </div>
+                        <p class="text-sm text-natutec-light">
+                            Uma única árvore adulta pode absorver até 22kg de CO₂ por ano através da fotossíntese, processo que converte dióxido de carbono e água em glicose usando energia solar.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium">
+                            <span class="bg-green-700/50 text-green-300 px-3 py-1 rounded-full">Biologia</span>
+                            <span class="bg-green-700/50 text-green-300 px-3 py-1 rounded-full">Pesquisa Científica</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Ciclo da Água --><div class="bg-slate-800 p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-natutec-green/50 hover:ring-2 ring-natutec-green">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-3xl text-blue-400">💧</span>
+                            <h3 class="text-xl font-bold">Ciclo da Água</h3>
+                        </div>
+                        <p class="text-sm text-natutec-light">
+                            O ciclo hidrológico movimenta aproximadamente 577.000 km³ de água anualmente, sendo fundamental para a regulação climática e manutenção da vida na Terra.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium">
+                            <span class="bg-blue-700/50 text-blue-300 px-3 py-1 rounded-full">Hidrologia</span>
+                            <span class="bg-blue-700/50 text-blue-300 px-3 py-1 rounded-full">Climatologia</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Biodegradação --><div class="bg-slate-800 p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-natutec-green/50 hover:ring-2 ring-natutec-green">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-3xl text-amber-400">🦠</span>
+                            <h3 class="text-xl font-bold">Biodegradação</h3>
+                        </div>
+                        <p class="text-sm text-natutec-light">
+                            Microorganismos decompositores quebram materiais orgânicos em 2-6 meses, enquanto plásticos podem levar até 450 anos para se decompor completamente.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium">
+                            <span class="bg-amber-700/50 text-amber-300 px-3 py-1 rounded-full">Microbiologia</span>
+                            <span class="bg-amber-700/50 text-amber-300 px-3 py-1 rounded-full">Química</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Dicas Sustentáveis --><section id="dicas" class="py-16 md:py-24 bg-slate-900 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold mb-12 section-title">Dicas Sustentáveis</h2>
+                <p class="text-lg text-natutec-light mb-12">
+                    Práticas simples que fazem a diferença no seu dia a dia.
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dica 1 --><div class="p-6 bg-natutec-dark rounded-xl flex items-start space-x-4 shadow-xl">
+                        <span class="text-3xl font-bold text-natutec-green">1</span>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-1">Reduza o Consumo de Água</h4>
+                            <p class="text-natutec-light text-sm">Feche a torneira ao escovar os dentes e tome banhos mais curtos. Uma torneira aberta desperdiça até 12 litros por minuto.</p>
+                        </div>
+                    </div>
+                    <!-- Dica 2 --><div class="p-6 bg-natutec-dark rounded-xl flex items-start space-x-4 shadow-xl">
+                        <span class="text-3xl font-bold text-natutec-green">2</span>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-1">Separe o Lixo Corretamente</h4>
+                            <p class="text-natutec-light text-sm">Recicle papel, plástico, vidro e metal. A reciclagem de 1 tonelada de papel salva 17 árvores adultas.</p>
+                        </div>
+                    </div>
+                    <!-- Dica 3 --><div class="p-6 bg-natutec-dark rounded-xl flex items-start space-x-4 shadow-xl">
+                        <span class="text-3xl font-bold text-natutec-green">3</span>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-1">Use Transporte Sustentável</h4>
+                            <p class="text-natutec-light text-sm">Prefira bicicleta, transporte público ou carona. Um carro emite cerca de 4,6 toneladas de CO₂ por ano.</p>
+                        </div>
+                    </div>
+                    <!-- Dica 4 --><div class="p-6 bg-natutec-dark rounded-xl flex items-start space-x-4 shadow-xl">
+                        <span class="text-3xl font-bold text-natutec-green">4</span>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-1">Economize Energia</h4>
+                            <p class="text-natutec-light text-sm">Troque lâmpadas por LED e desligue aparelhos da tomada. LEDs consomem 80% menos energia que incandescentes.</p>
+                        </div>
+                    </div>
+                    <!-- Dica 5 --><div class="p-6 bg-natutec-dark rounded-xl flex items-start space-x-4 shadow-xl">
+                        <span class="text-3xl font-bold text-natutec-green">5</span>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-1">Cultive uma Horta</h4>
+                            <p class="text-natutec-light text-sm">Plante temperos e vegetais em casa. Além de reduzir embalagens, você tem alimentos mais frescos e saudáveis.</p>
+                        </div>
+                    </div>
+                    <!-- Dica 6 --><div class="p-6 bg-natutec-dark rounded-xl flex items-start space-x-4 shadow-xl">
+                        <span class="text-3xl font-bold text-natutec-green">6</span>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-1">Evite Descartáveis</h4>
+                            <p class="text-natutec-light text-sm">Use garrafas reutilizáveis e sacolas de pano. Um brasileiro produz em média 1kg de lixo por dia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Curiosidades Ambientais --><section id="curiosidades" class="py-16 md:py-24 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold mb-12 section-title">Curiosidades Ambientais</h2>
+                <p class="text-lg text-natutec-light mb-12">
+                    Fatos surpreendentes sobre nosso planeta que vão te impressionar.
+                </p>
+
+                <!-- Stats Grid --><div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="text-center p-6 bg-slate-800 rounded-xl shadow-lg border-b-4 border-natutec-green">
+                        <p class="text-5xl font-bold text-natutec-green">20%</p>
+                        <p class="mt-2 text-sm text-natutec-light">A Floresta Amazônica produz 20% do oxigênio mundial.</p>
+                    </div>
+                    <div class="text-center p-6 bg-slate-800 rounded-xl shadow-lg border-b-4 border-natutec-green">
+                        <p class="text-5xl font-bold text-natutec-green">1M+</p>
+                        <p class="mt-2 text-sm text-natutec-light">Mais de 1 milhão de espécies estão ameaçadas de extinção.</p>
+                    </div>
+                    <div class="text-center p-6 bg-slate-800 rounded-xl shadow-lg border-b-4 border-natutec-green">
+                        <p class="text-5xl font-bold text-natutec-green">8M</p>
+                        <p class="mt-2 text-sm text-natutec-light">8 milhões de toneladas de plástico chegam aos oceanos todos os anos.</p>
+                    </div>
+                    <div class="text-center p-6 bg-slate-800 rounded-xl shadow-lg border-b-4 border-natutec-green">
+                        <p class="text-5xl font-bold text-natutec-green">30%</p>
+                        <p class="mt-2 text-sm text-natutec-light">As abelhas são responsáveis pela polinização de 30% dos alimentos.</p>
+                    </div>
+                </div>
+
+                <!-- Detailed Facts --><div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-800 p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-4xl">🌍</span>
+                            <h3 class="text-2xl font-bold">Planeta Terra</h3>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-natutec-light">
+                            <li>A Terra tem aproximadamente 4,5 bilhões de anos.</li>
+                            <li>71% da superfície terrestre é coberta por água.</li>
+                            <li>Um dia na Terra está ficando mais longo: 1,7 milissegundos por século.</li>
+                            <li>A camada de ozônio nos protege de 99% da radiação UV solar.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-4xl">🌱</span>
+                            <h3 class="text-2xl font-bold">Biodiversidade</h3>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-natutec-light">
+                            <li>Existem cerca de 8,7 milhões de espécies no planeta.</li>
+                            <li>Uma colher de chá de solo contém mais organismos que pessoas na Terra.</li>
+                            <li>As florestas tropicais abrigam 50% de todas as espécies terrestres.</li>
+                            <li>Fungos são responsáveis por decompor 85% da matéria orgânica.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Mensagem de Agradecimento --><section class="py-16 md:py-24 bg-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-natutec-green mb-6">
+                    Obrigado por Cuidar do Nosso Planeta!
+                </h2>
+                <p class="text-xl text-natutec-light max-w-3xl mx-auto mb-12">
+                    Cada pequena ação que você toma em prol do meio ambiente faz uma diferença real. Você é parte da solução para um futuro mais sustentável e verde.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-8">Espalhe a Mensagem</h3>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-natutec-dark rounded-xl shadow-xl border-t-4 border-green-500">
+                        <span class="text-4xl mb-3 block">🌱</span>
+                        <h4 class="text-xl font-semibold mb-2">Plante Ideias</h4>
+                        <p class="text-sm text-natutec-light">Compartilhe dicas sustentáveis com amigos e família.</p>
+                    </div>
+                    <div class="p-6 bg-natutec-dark rounded-xl shadow-xl border-t-4 border-green-500">
+                        <span class="text-4xl mb-3 block">🤝</span>
+                        <h4 class="text-xl font-semibold mb-2">Una Forças</h4>
+                        <p class="text-sm text-natutec-light">Participe de grupos e iniciativas ambientais locais.</p>
+                    </div>
+                    <div class="p-6 bg-natutec-dark rounded-xl shadow-xl border-t-4 border-green-500">
+                        <span class="text-4xl mb-3 block">🌍</span>
+                        <h4 class="text-xl font-semibold mb-2">Transforme o Mundo</h4>
+                        <p class="text-sm text-natutec-light">Pequenas ações geram grandes mudanças globais.</p>
+                    </div>
+                </div>
+
+                <!-- O botão "Compartilhar Conhecimento" foi removido conforme solicitado --></div>
+        </section>
+
+        <!-- Seção Quiz de Sustentabilidade --><section id="calculadora" class="py-16 md:py-24 scroll-mt-24">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold mb-4 section-title">Quiz de Sustentabilidade</h2>
+                <p class="text-lg text-natutec-light mb-8">
+                    Descubra o quão sustentáveis são seus hábitos cotidianos e receba dicas personalizadas.
+                </p>
+
+                <form id="quiz-form" class="bg-slate-800 p-8 rounded-xl shadow-2xl space-y-6">
+                    <p class="text-natutec-light mb-4">Responda as perguntas sobre seu dia a dia para descobrir seu nível de sustentabilidade.</p>
+
+                    <!-- Pergunta 1 --><div>
+                        <label for="q1" class="block text-lg font-medium mb-2">1. Como você se locomove na maior parte dos dias?</label>
+                        <select id="q1" name="transporte" required class="w-full p-3 bg-natutec-dark border border-slate-700 rounded-lg text-white focus:ring-natutec-green focus:border-natutec-green">
+                            <option value="">Selecione seu meio de transporte principal</option>
+                            <option value="4">Bicicleta / A pé</option>
+                            <option value="3">Transporte público</option>
+                            <option value="2">Carona / Compartilhado</option>
+                            <option value="1">Carro particular (sozinho)</option>
+                        </select>
+                    </div>
+
+                    <!-- Pergunta 2 --><div>
+                        <label for="q2" class="block text-lg font-medium mb-2">2. Com que frequência você recicla?</label>
+                        <select id="q2" name="reciclagem" required class="w-full p-3 bg-natutec-dark border border-slate-700 rounded-lg text-white focus:ring-natutec-green focus:border-natutec-green">
+                            <option value="">Selecione sua frequência de reciclagem</option>
+                            <option value="4">Sempre / Faço compostagem</option>
+                            <option value="3">Quase sempre</option>
+                            <option value="2">Às vezes</option>
+                            <option value="1">Raramente / Nunca</option>
+                        </select>
+                    </div>
+
+                    <!-- Pergunta 3 --><div>
+                        <label for="q3" class="block text-lg font-medium mb-2">3. Como é sua alimentação?</label>
+                        <select id="q3" name="alimentacao" required class="w-full p-3 bg-natutec-dark border border-slate-700 rounded-lg text-white focus:ring-natutec-green focus:border-natutec-green">
+                            <option value="">Selecione seu padrão alimentar</option>
+                            <option value="4">Vegetariana / Vegana</option>
+                            <option value="3">Baixo consumo de carne</option>
+                            <option value="2">Consumo moderado de carne</option>
+                            <option value="1">Alto consumo de carne</option>
+                        </select>
+                    </div>
+
+                    <!-- Pergunta 4 --><div>
+                        <label for="q4" class="block text-lg font-medium mb-2">4. Como você descreveria seus hábitos de consumo?</label>
+                        <select id="q4" name="consumo" required class="w-full p-3 bg-natutec-dark border border-slate-700 rounded-lg text-white focus:ring-natutec-green focus:border-natutec-green">
+                            <option value="">Selecione seu padrão de consumo</option>
+                            <option value="4">Priorizo o local e durável</option>
+                            <option value="3">Compro o necessário</option>
+                            <option value="2">Consumo ocasionalmente por impulso</option>
+                            <option value="1">Alto consumo de itens descartáveis</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Pergunta 5 --><div>
+                        <label for="q5" class="block text-lg font-medium mb-2">5. Que tipo de moradia você tem?</label>
+                        <select id="q5" name="moradia" required class="w-full p-3 bg-natutec-dark border border-slate-700 rounded-lg text-white focus:ring-natutec-green focus:border-natutec-green">
+                            <option value="">Selecione o tipo de moradia</option>
+                            <option value="4">Apartamento pequeno / Casa sustentável</option>
+                            <option value="3">Apartamento grande / Casa pequena</option>
+                            <option value="2">Casa média</option>
+                            <option value="1">Casa grande / Grande consumo de energia</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 mt-4 border border-transparent text-base font-medium rounded-full shadow-lg text-natutec-dark bg-natutec-green hover:bg-emerald-600 transition duration-300 transform hover:scale-105">
+                        Descobrir Meu Nível de Sustentabilidade
+                    </button>
+                    
+                    <!-- Área de Resultado do Quiz --><div id="quiz-result" class="mt-6 p-4 rounded-lg bg-slate-900 hidden">
+                        <h4 class="text-xl font-bold mb-2 text-natutec-green">Seu Resultado:</h4>
+                        <p id="result-text" class="text-white"></p>
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+
+        <!-- Seção Sobre o Projeto (Finalizada) --><section id="sobre" class="py-16 md:py-24 bg-slate-900 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold mb-4 section-title mx-auto">Sobre o Projeto</h2>
+                <div class="max-w-4xl mx-auto bg-slate-800 p-8 rounded-xl shadow-2xl">
+                    <!-- ÊNFASE: Texto alterado para focar na mudança de hábitos em espaços cotidianos --><p class="text-lg text-natutec-light mb-6">
+                        O <strong class="text-natutec-green">NatuTec</strong> é um projeto acadêmico desenvolvido por <strong class="text-white">uma estudante</strong> da
+                        <strong class="text-white">Universidade Cruzeiro do Sul</strong>.
+                    </p>
+                    <p class="text-lg text-natutec-light mb-8">
+                        Nosso objetivo principal é incentivar a sustentabilidade a partir das <strong>mudanças de hábitos nos espaços que já convivemos (casa, trabalho e comunidade)</strong>, combinando ciência e dicas práticas para transformar o seu dia a dia.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer --><footer class="bg-natutec-dark border-t border-slate-800 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Ano atualizado para 2025 --><p class="text-sm text-natutec-light mb-4">
+                &copy; 2025 EcoHabito. Todos os direitos reservados.
+            </p>
+            <!-- NAV LINKS ADICIONADOS AO FOOTER --><div class="flex flex-wrap justify-center space-x-4 text-sm">
+                <a href="#hero" class="text-natutec-light hover:text-natutec-green transition duration-300">Início</a>
+                <span class="text-natutec-light">|</span>
+                <a href="#ciencia" class="text-natutec-light hover:text-natutec-green transition duration-300">Ciência</a>
+                <span class="text-natutec-light">|</span>
+                <a href="#dicas" class="text-natutec-light hover:text-natutec-green transition duration-300">Dicas</a>
+                <span class="text-natutec-light">|</span>
+                <a href="#curiosidades" class="text-natutec-light hover:text-natutec-green transition duration-300">Curiosidades</a>
+                <span class="text-natutec-light">|</span>
+                <a href="#calculadora" class="text-natutec-light hover:text-natutec-green transition duration-300">Quiz</a>
+                <span class="text-natutec-light">|</span>
+                <a href="#sobre" class="text-natutec-light hover:text-natutec-green transition duration-300">Sobre</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Interatividade --><script>
+        // Lógica para o Menu Mobile
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        /**
+         * Alterna a visibilidade do menu mobile.
+         */
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        /**
+         * Fecha o menu mobile após clicar em um link.
+         */
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Lógica para o Quiz de Sustentabilidade
+        const quizForm = document.getElementById('quiz-form');
+        const quizResultDiv = document.getElementById('quiz-result');
+        const resultText = document.getElementById('result-text');
+
+        quizForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let totalScore = 0;
+            const questions = ['q1', 'q2', 'q3', 'q4', 'q5'];
+            let allAnswered = true;
+
+            // Coleta e soma dos pontos
+            questions.forEach(id => {
+                const selectElement = document.getElementById(id);
+                const value = parseInt(selectElement.value, 10);
+                if (isNaN(value)) {
+                    allAnswered = false;
+                }
+                totalScore += value;
+            });
+
+            if (!allAnswered) {
+                resultText.innerHTML = 'Por favor, responda todas as perguntas para obter seu resultado!';
+                quizResultDiv.classList.remove('hidden', 'bg-slate-900', 'bg-green-700/50');
+                quizResultDiv.classList.add('bg-red-700/50');
+                return;
+            }
+
+            let resultMessage = '';
+            let ringColor = 'ring-natutec-green';
+
+            // Classificação do score (Min: 5, Max: 20)
+            if (totalScore >= 18) {
+                resultMessage = `Parabéns! Sua pontuação é ${totalScore}/20. Você é um <strong>Guru da Sustentabilidade</strong>! Seu estilo de vida é extremamente consciente. Continue inspirando os outros!`;
+                ringColor = 'ring-green-500';
+            } else if (totalScore >= 14) {
+                resultMessage = `Ótimo! Sua pontuação é ${totalScore}/20. Você é <strong>Consciente</strong>! Você pratica bons hábitos. Focar em reduzir o consumo de carne ou adotar transporte público com mais frequência pode te levar ao próximo nível.`;
+                ringColor = 'ring-yellow-500';
+            } else if (totalScore >= 10) {
+                resultMessage = `Você está <strong>Em Transição</strong>! Sua pontuação é ${totalScore}/20. Você já está no caminho certo. Tente aplicar mais duas ou três dicas da nossa seção 'Dicas Sustentáveis' para ver uma grande melhoria!`;
+                ringColor = 'ring-orange-500';
+            } else { // 5-9
+                resultMessage = `Sua pontuação é ${totalScore}/20. Você é um <strong>Iniciante</strong>. Há muitas oportunidades de fazer a diferença! Comece pela separação do lixo e redução de água. Qualquer passo conta!`;
+                ringColor = 'ring-red-500';
+            }
+
+            // Exibe o resultado
+            quizResultDiv.classList.remove('hidden', 'bg-red-700/50', 'bg-green-700/50', 'bg-slate-900');
+            quizResultDiv.classList.add('bg-slate-900', 'ring-2', ringColor);
+            resultText.innerHTML = resultMessage;
+            
+            // A rolagem automática do quiz foi removida na requisição anterior.
+        });
+    </script>
+
+</body>
+</html>
